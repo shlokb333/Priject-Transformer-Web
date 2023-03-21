@@ -1,0 +1,76 @@
+<!DOCTYPE html>    
+<html>
+
+<head>
+	<title>Login Form</title>
+	<link rel="stylesheet" type="text/css" href="loginStyle.css">
+</head>
+
+<body>
+	<script type="text/javascript">
+		//<!-- Function to show and hide login and sign up div-- >
+		function showHidefunction() {
+			var login = document.getElementById("mylogin");
+			var signup = document.getElementById("mySignUp");
+			if (login.style.display === "none") {
+				login.style.display = "block";
+				signup.style.display = "none";
+			} else {
+				login.style.display = "none";
+				signup.style.display = "block";
+			}
+		}
+	</script>
+	<div id="mylogin">
+		<h1>LOG IN</h1><br>
+		<div class="login">
+			<form id="login" method="post" action="#">
+				<p><label for="Uname" data-icon="u">Username</label></p>
+				<input id="Uname" name="Uname" required="required" type="text" placeholder="myusername or mymail@mail.com" />
+				<p> <label for="password" data-icon="p">Password </label></p>
+				<input id="Pass" name="Pass" required="required" type="password" placeholder="eg. X8df!90EO" />
+				<p>
+					<input type="checkbox" name="check" id="check" value="loginkeeping" />
+					<label for="check">Keep me logged in</label>
+				</p>
+				<p>
+					<input type="submit" value="Log In" name="log" id="log" />
+				</p>
+				<p>
+					Not a member yet ?
+					<a href="#toSignUp" onclick="showHidefunction()"><button>Sign Up</button></a>
+				</p>
+			</form>
+		</div>
+	</div>
+
+	<div id="mySignUp" style="display:none">
+		<h1>SIGN UP</h1><br>
+		<div class="login">
+			<form id="login" method="post" action="#">
+				<p><label for="Uname" data-icon="u">First Name</label></p>
+				<input id="Uname" name="Uname" required="required" type="text" placeholder="FirstName" />
+
+				<p><label for="Uname" data-icon="u">Last Name</label></p>
+				<input id="Uname" name="Uname" required="required" type="text" placeholder="LastName" />
+
+				<p><label for="Uname" data-icon="u">Email</label></p>
+				<input id="Uname" name="Uname" required="required" type="email" placeholder="Email" />
+
+				<p><label for="Pass" data-icon="p">Password </label></p>
+				<input id="Pass" name="Pass" required="required" type="password" placeholder="eg. X8df!90EO" />
+
+				<p><label for="Pass" data-icon="p">Confirm Password </label></p>
+				<input id="Pass" name="Pass" required="required" type="password" placeholder="eg. X8df!90EO" />
+				<br /><br />
+				<p> <input type="submit" value="Sign up" name="log" id="log" /></p>
+
+				<p>
+					Already a member ?
+					<a href="#tologin" onclick="showHidefunction()"><button>Go and Log In</button>  </a>
+				</p>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

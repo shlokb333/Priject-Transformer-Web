@@ -167,7 +167,7 @@ a {
     background-color: #f1f1f1;
   }
 
-  /* .subjects{
+  .subjects{
     background:#ffffff;
     background: linear-gradient(to right,#ffffff,#ffffff);
     display :flex;
@@ -241,7 +241,7 @@ a {
     transform: scale(1.075);
     transition: 0.3s ease-in;
     cursor: pointer;
-} */
+}
 
 /* ct pt button */
 .button-76 {
@@ -280,3 +280,34 @@ a {
     width:200px;
     display: inline-block;
   }
+  .main__btn{
+    font-size: 1.8rem;
+    background: #f12711; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f12711, #f5af19);
+    padding : 20px 60px;
+    border: none;
+    border-radius: 4px;
+    color:#fff;
+    margin-top: 2rem;
+    cursor: pointer;
+    position : relative;
+    transition: 0.35s ;
+    outline : none;
+}
+.button{                                /*For Login button*/
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height:100% ;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #f12711; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f12711, #f5af19); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f12711, #f5af19);
+    color: #fff;
+    transition:all 0.3s ease ;
+}
