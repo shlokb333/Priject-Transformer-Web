@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Page</title>
+	<link rel="stylesheet" href="CSS_Main_Style.css">
+	
+	<link rel="stylesheet" href="CSS_Register_Style.css">
+	
+</head>
+<body>
+	<nav class="navbar">
+        <div class="navbar__container">
+          <!--Anchor Tags -->
+          <a href="#home" id="navbar__logo"><Strong><em>Transformer<span1>Go</span1></em></Strong></a> 
+          <div class="navbar__toggle" id="mobile-menu">  
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+    
+          </div>
+          
+        </div>
+      </nav>
+	<div class="heading">
+		<h2>Registration</h2>
+	</div>
+	
+	<form>
+		<label for="username">Username:</label>
+		<input type="text" id="username" required>
+		<label for="email">Email:</label>
+		<input type="text" id="email" required>
+		<label for="password">Password:</label>
+		<input type="password" id="password" required>
+		<label for="ConfirmPassword">Confirm Password:</label>
+		<input type="Password" id="password" required>
+		<button type="submit" class="button" id="register-btn">Register</button>
+	</form>
+	<p>Already registered? <a href="HTML_Login.html"><button class="button" id="login_btn">Login</button></a></p>
+
+	<script src="JS_Register.js"></script>
+</body>
+</html>
