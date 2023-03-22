@@ -5,6 +5,6 @@ registerForm.addEventListener('submit', (event) => {
     const password = document.getElementById('password').value;
     localStorage.setItem(username, password);
     alert('Registration successful! Please login.');
-    window.location.href = 'login.html';
+    window.location.href = 'HTML_Login.html';
 });
 

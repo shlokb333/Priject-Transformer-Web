@@ -6,7 +6,7 @@ loginForm.addEventListener('submit', (event) => {
     const storedPassword = localStorage.getItem(username);
     if (password === storedPassword) {
         alert('Login successful!');
-        window.location.href = 'choose-type.html';
+        window.location.href = 'HTML_Index.html';
     } else {
         alert('Username or password is incorrect. Please try again.');
     }

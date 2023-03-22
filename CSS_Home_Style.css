@@ -31,7 +31,7 @@ padding : 0 10px;
 #navbar__logo
 {
     background-color: #ff8177;
-    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    background-image: linear-gradient(to right, #0ba360 0%, #00ff0d 100%);
     background-size: 100%;
     -webkit-background-clip: text;           /*To make the text transparent*/
     -moz-background-clip: text;
@@ -76,7 +76,7 @@ width:100%;
 }
 .navbar__container span1{
     /* background: #fdfc47; fallback for old browsers */
-  background: #000000;
+    background-image: linear-gradient(to right, #000000 0%, #606060 100%);
     background: -webkit-linear-gradient(to right, #fdfc47, #24fe41); /* Chrome 10-25, Safari 5.1-6 */
   /* background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%); */
       
