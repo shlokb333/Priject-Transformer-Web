@@ -6,6 +6,9 @@
     <title>Input for Potential Transformer</title>
     <link rel="stylesheet" href="CSS_Main_Style.css">
     <link rel="stylesheet" href="CSS_Styles_PT.css">
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="JS_Computation.js"></script>
+    
 </head>
 
 <body>
@@ -36,14 +39,12 @@
     </div>
     <form class="InputBox">
 
-        <div class="form-group">
-            <!-- <h4>Type</h4>
-
-            <input type="radio" id="ct-oil-cooled" name="pt-conn" value="ct-oil-cooled">&nbsp;Oil
-            Cooled&nbsp;&nbsp;&nbsp;&nbsp;</input>
-
-            <input type="radio" id="ct-epoxy-dry" name="pt-conn" value="ct-epoxy-dry">&nbsp;Epoxy /
-            Dry</input> -->
+        <div class="form-group" id="outputDiv">
+            <div id="Types">
+                <input type="radio" id="t1" name="type" value="Oil Cooled"> Oil Cooled
+                <input type="radio" id="t2" name="type" value="Epoxy/Dry "> Epoxy/Dry
+            </div>
+            <br>
 
             <label for="burden" class="Labels">Burden </label>
             <select name="burden" id="burden">
@@ -130,12 +131,12 @@
         <br><br>
     </form>
 
-    <div class="wrapper">
+    <div class="wrapper"  style="margin-top: 150px;">
         <div>
-            <div class="heading">
+            <div class="heading" >
                 <h2>Output for Potential Transformer</h2>
             </div>
-            <form class="myClass">
+            <form class="OutputBox" action="HTML_PrintPagePT.html">
                 <label id="coresize"></label>
                 <br><br>
                 <label id="insulationOnCore"></label>
@@ -152,6 +153,7 @@
                 <br><br>
                 <label id="insulationOnPrimary"></label>
                 <br><br>
+                <input class="button" id="printbtn" style="margin-left: 170px;" type="submit"  value="Print" onclick="passvalues()"/>
             </form>
         </div>
         <div id="3d-model">
@@ -159,23 +161,23 @@
                 <h2>3D Model - epoxy dry</h2>
             </div>
             <div class="row">
-              <div class="sketchfab-embed-wrapper column"> <iframe title="Epoxy Transformer With Edits And Cutsblend"
-                width="500"
-                height="500" frameborder="0" allowfullscreen mozallowfullscreen="true"
-                  webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
-                  execution-while-out-of-viewport execution-while-not-rendered web-share
-                  src="https://sketchfab.com/models/bf794deb94134a94baa31305b7862117/embed"> </iframe>
-                <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a
-                    href="https://sketchfab.com/3d-models/epoxy-transformer-with-edits-and-cutsblend-bf794deb94134a94baa31305b7862117?utm_medium=embed&utm_campaign=share-popup&utm_content=bf794deb94134a94baa31305b7862117"
-                    target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Epoxy Transformer
-                  </a> by <a
-                    href="https://sketchfab.com/pranitmenkar24?utm_medium=embed&utm_campaign=share-popup&utm_content=bf794deb94134a94baa31305b7862117"
-                    target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> </a> <a
-                    href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=bf794deb94134a94baa31305b7862117"
-                    target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p>
-              </div>
+                <div class="sketchfab-embed-wrapper"> <iframe title="Epoxy Transformer with Dimensions" width="500" height="500" frameborder="0"
+                    allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport
+                    execution-while-not-rendered web-share
+                    src="https://sketchfab.com/models/2d1e67715d15453996afa9cbea8ff6f5/embed"> </iframe>
+                  <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a
+                      href="https://sketchfab.com/3d-models/epoxy-transformer-with-dimensions-2d1e67715d15453996afa9cbea8ff6f5?utm_medium=embed&utm_campaign=share-popup&utm_content=2d1e67715d15453996afa9cbea8ff6f5"
+                      target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Epoxy Transformer with
+                      Dimensions </a> by <a
+                      href="https://sketchfab.com/pranitmenkar24?utm_medium=embed&utm_campaign=share-popup&utm_content=2d1e67715d15453996afa9cbea8ff6f5"
+                      target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">  </a> <a
+                      href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=2d1e67715d15453996afa9cbea8ff6f5"
+                      target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p>
+                </div>
             </div>
           </div>
     </div>
-    <script src="JS_Computation.js"></script>
+    
 </body>
+</html>

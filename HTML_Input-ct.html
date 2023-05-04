@@ -6,6 +6,9 @@
     <title>Input for Current Transformer</title>
     <link rel="stylesheet" href="CSS_Main_Style.css">
     <link rel="stylesheet" href="CSS_Styles_CT.css">
+    <script src="JS_Computation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js">
+    </script>
 </head>
 
 <body>
@@ -37,14 +40,15 @@
     <form class="InputBox">
 
         <div class="form-group">
-            <!-- <h4>Type</h4>
+            
 
-            <input type="radio" id="ct-oil-cooled" name="pt-conn" value="ct-oil-cooled">&nbsp;Oil
-            Cooled&nbsp;&nbsp;&nbsp;&nbsp;</input>
-
-            <input type="radio" id="ct-epoxy-dry" name="pt-conn" value="ct-epoxy-dry">&nbsp;Epoxy /
-            Dry</input> -->
-
+            <div id="Types">
+                <input type="radio" id="t1" name="type" value="Oil Cooled"> Oil Cooled
+                <input type="radio" id="t2" name="type" value="Epoxy/Dry "> Epoxy/Dry
+            </div>
+            <br>
+            <br>
+            
             <label for="burden" class="Labels">Burden </label>
             <select name="burden" id="burden">
                 <option value="select">--Select--</option>
@@ -71,10 +75,10 @@
             <label for="class" class="Labels">Class</label>
             <select name="class" id="class-type">
                 <option value="select">--Select--</option>
-                <option value="class-0.5">0.2S</option>
-                <option value="class-1">0.5S</option>
-                <option value="class-2">0.2S/5P10</option>
-                <option value="class-2">0.5S/5P10/PS</option>
+                <option value="0.2S">0.2S</option>
+                <option value="0.5S">0.5S</option>
+                <option value="0.2S/5P10">0.2S/5P10</option>
+                <option value="0.5S/5P10/PS">0.5S/5P10/PS</option>
             </select>
         </div>
 
@@ -110,19 +114,20 @@
         <div class="wrapper">
             <a href="HTML_Index.html" class="button" id="btns">Back</a>
 
-            <a onclick="calculate()" class="button" id="btns">Compute</a>
+            <a onclick="calculate()" class="button" id="btns" style="font-weight: bold;" >Compute</a>
             <!-- <a href="HTML_Output_Current.html" onclick="calculate()" class="button" id="btns">Compute</a> -->
+            
         </div>
 
         <br><br>
     </form>
 
-    <div class="wrapper">
+    <div class="wrapper" style="margin-top: 150px;">
         <div>
             <div class="heading">
                 <h2>Output for Current Transformer</h2>
             </div>
-            <form class="myClass">
+            <form class="OutputBox" action="HTML_PrintPageCT.html">
                 <label id="coresize"></label>
                 <br><br>
                 <label id="insulationOnCore"></label>
@@ -139,6 +144,8 @@
                 <br><br>
                 <label id="insulationOnPrimary"></label>
                 <br><br>
+                <!-- <a  class="button" id="printbtn" style="margin-left: 170px;">Print</a> -->
+                <input class="button" id="printbtn" style="margin-left: 170px;" type="submit"  value="Print" onclick="passvalues()"/>
             </form>
         </div>
         <div id="3d-model">
@@ -146,24 +153,23 @@
                 <h2>3D Model - oil cooled</h2>
             </div>
             <div class="row">
-                <div class="sketchfab-embed-wrapper column" id="Model"> <iframe title="Metallic Transformer" width="500"
-                        height="500" frameborder="0" allowfullscreen mozallowfullscreen="true"
-                        webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
-                        xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
-                        src="https://sketchfab.com/models/138d389d53cf4ac993f4edddff67cf47/embed"> </iframe>
-                    <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a
-                            href="https://sketchfab.com/3d-models/metallic-transformer-138d389d53cf4ac993f4edddff67cf47?utm_medium=embed&utm_campaign=share-popup&utm_content=138d389d53cf4ac993f4edddff67cf47"
-                            target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Oil Cooled</a>
-                        by
-                        <a href="https://sketchfab.com/pranitmenkar24?utm_medium=embed&utm_campaign=share-popup&utm_content=138d389d53cf4ac993f4edddff67cf47"
-                            target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> </a> <a
-                            href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=138d389d53cf4ac993f4edddff67cf47"
-                            target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
-                    </p>
+                <div class="sketchfab-embed-wrapper"> <iframe title="Oil Cooled with Dimensions" width="500" height="500" frameborder="0" allowfullscreen
+                    mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
+                    xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
+                    src="https://sketchfab.com/models/24bdbf43519840f691e3ace4fae233f5/embed"> </iframe>
+                  <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a
+                      href="https://sketchfab.com/3d-models/oil-cooled-with-dimensions-24bdbf43519840f691e3ace4fae233f5?utm_medium=embed&utm_campaign=share-popup&utm_content=24bdbf43519840f691e3ace4fae233f5"
+                      target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Oil Cooled with Dimensions </a>
+                    by <a
+                      href="https://sketchfab.com/pranitmenkar24?utm_medium=embed&utm_campaign=share-popup&utm_content=24bdbf43519840f691e3ace4fae233f5"
+                      target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"></a><a
+                      href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=24bdbf43519840f691e3ace4fae233f5"
+                      target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p>
                 </div>
             </div>
         </div>
         
     </div>
-    <script src="JS_Computation.js"></script>
+    
 </body>
+</html>

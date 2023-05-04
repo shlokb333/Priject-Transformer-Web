@@ -3,6 +3,12 @@
     width: 100px;
     margin-left: 65px;
 }
+.OutputBox label
+{
+    text-align: left;
+    width: 350px
+    /* padding: 2px 2px 2px 2px; */
+}
 .wrapper
 {
     display:grid;
